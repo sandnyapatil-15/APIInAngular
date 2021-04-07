@@ -20,5 +20,18 @@ emplist:EmpinfoModule[];
       console.log(this.emplist);
     })
   }
+  delete(id:number):void{
+    this.svc.DeleteEmployee(id).subscribe((data:boolean)=>
+    {
+      if(data==true)
+      alert('deleted successful');
+      else
+      {
+        alert('deleted successful');
+      }
+    }
+    );
+
+  }
 
 }
