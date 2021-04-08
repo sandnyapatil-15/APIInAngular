@@ -8,6 +8,8 @@ import { InsertemployeeComponent } from './components/insertemployee/insertemplo
 import { ShowallemployeesComponent } from './components/showallemployees/showallemployees.component';
 import { ShowemployeebyidComponent } from './components/showemployeebyid/showemployeebyid.component';
 import { LoginComponent } from './components/login/login.component';
+import { SelectProjByIDComponent } from './components/select-proj-by-id/select-proj-by-id.component';
+import { UpdateProjectComponent } from './components/update-project/update-project.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { LoginComponent } from './components/login/login.component';
     InsertemployeeComponent,
     ShowallemployeesComponent,
     ShowemployeebyidComponent,
-    LoginComponent
+    LoginComponent,
+    SelectProjByIDComponent,
+    UpdateProjectComponent
   ],
   imports: [
     BrowserModule,

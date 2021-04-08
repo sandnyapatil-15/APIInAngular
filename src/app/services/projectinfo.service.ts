@@ -22,4 +22,12 @@ httpOptions={headers : new HttpHeaders({
   GetProjects():Observable<ProjinfoModule[]>{
     return this.http.get<ProjinfoModule[]>(this.url + "/"+"GetProjects");
   }
+  UpdateProject(pid: number, pinfo:ProjinfoModule):Observable<boolean>{
+    return this.http.put<boolean>(this.url + '/UpdateProject/' + pid, pinfo, this.httpOptions);
+
+  }
+
+  GetProjById(id:number): Observable<ProjinfoModule>{
+    return this.http.get<ProjinfoModule>(this.url+ '/SelectProjByID/' +id);
+  }
 }

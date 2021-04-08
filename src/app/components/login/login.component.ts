@@ -9,8 +9,6 @@ import {EmployeeinfoService} from '../../services/employeeinfo.service';
 })
 export class LoginComponent implements OnInit {
 svc : EmployeeinfoService;
-name:string;
-pwd:string;
 model:any=[];
 emp=new EmpinfoModule;
   constructor(svc: EmployeeinfoService) { 
@@ -21,23 +19,11 @@ this.svc=svc;
 
   ngOnInit(): void {
   }
-Login(empForm:NgForm):void {
-
-  console.log(empForm.value);
-this.name=empForm.value.name;
-this.pwd=empForm.value.pwd;
-
-this.svc.Login(this.name,this.pwd).subscribe((data:String)=>{
-console.log(data);
-if (data="Login Successful")
-{
-  alert('Login Successful')
-}
-else
-{
-  alert('Invalid Creds')
-}
-});
-
-}
+ Login(loginForm:NgForm):void{
+    this.emp.EmpName = loginForm.value.name;
+    this.emp.password = loginForm.value.pwd;
+    this.svc.Login(this.emp.EmpName,this.emp.password).subscribe((data:string)=>{
+      alert(data);
+    })
+  }
 }

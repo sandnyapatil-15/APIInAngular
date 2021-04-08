@@ -1,0 +1,37 @@
+<p>select-proj-by-id works!</p>
+
+
+<h2>Show Project By ProjectID</h2>
+<form #empForm="ngForm" name="empForm" (ngSubmit)="RegisterData(empForm)">
+    <div>
+        <label>Enter Id : </label>
+        <input type="text" name="pid" [(ngModel)]="model.pid"
+        #pid="ngModel" required/>
+        <span *ngIf="pid.errors?.required">ID has to be entered</span>
+    </div>
+    <div>
+        <button type="submit"  [disabled]="empForm.invalid">Display</button>
+    </div>
+    <hr>
+    <table border="1">
+        <tr>
+            <th>Proj ID</th>                
+            <th>Proj Name</th>         
+            <th>Domain</th>     
+                       
+            </tr>
+        <tr>
+            <td>{{projid}}</td>
+            <td>{{projname}}</td>
+            <td>{{domain}}</td>
+            
+        </tr>
+    </table>
+</form>
+
+
+
+
+
+
+
