@@ -10,6 +10,7 @@ import { ShowemployeebyidComponent } from './components/showemployeebyid/showemp
 import { LoginComponent } from './components/login/login.component';
 import { SelectProjByIDComponent } from './components/select-proj-by-id/select-proj-by-id.component';
 import { UpdateProjectComponent } from './components/update-project/update-project.component';
+import { UpdateemployeeComponent } from './components/updateemployee/updateemployee.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UpdateProjectComponent } from './components/update-project/update-proje
     ShowemployeebyidComponent,
     LoginComponent,
     SelectProjByIDComponent,
-    UpdateProjectComponent
+    UpdateProjectComponent,
+    UpdateemployeeComponent
   ],
   imports: [
     BrowserModule,

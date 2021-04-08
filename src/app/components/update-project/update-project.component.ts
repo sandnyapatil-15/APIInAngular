@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {FormsModule, NgForm, FormGroup} from '@angular/forms';
+import { ProjinfoModule } from 'src/app/modules/projinfo/projinfo.module';
+import{ProjectinfoService} from '../../services/projectinfo.service';
 
 @Component({
   selector: 'app-update-project',
@@ -6,16 +9,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./update-project.component.css']
 })
 export class UpdateProjectComponent implements OnInit {
-pid: any;
-pname: string;
-domain : string;
-  constructor() { }
+  model:any=[];
+  pid:number;
+  projname:string;
+  domain:string;
+  svc:ProjectinfoService;
+  pinfo=new ProjinfoModule();
+  constructor(svc:ProjectinfoService) {
+    this.svc=svc;
+   }
 
-  ngOnInit(): void {
-    this.pid=localStorage.getItem('PID');
-    this.pname=localStorage.getItem('PNAME');
-    this.domain= localStorage.getItem('DOMAIN');
-    alert(this.pid + ',' + this.pname + ',' +this.domain);
+   ngOnInit(): void {
+    this.model.pid = localStorage.getItem('PID');
+    this.model.projname=localStorage.getItem('PNAME');
+    this.model.domain=localStorage.getItem('DOMAIN');
   }
+  UpdateData(projForm:NgForm){
+    
+    this.pinfo.projid=this.model.pid;
+    this.pinfo.projname=this.model.projname;
+    this.pinfo.domain=this.model.domain;
 
+    this.svc.UpdateProject(this.model.pid,this.pinfo).subscribe((data:boolean)=>{
+      if(data==true){
+        console.log(""+this.model.pid+" "+this.model.projname+" "+this.model.domain);
+        alert("Update Successfull");
+      }
+      else{
+        alert("update Unsuccessfull");
+      }
+    })
+  }
 }

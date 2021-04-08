@@ -6,6 +6,7 @@ import { ShowemployeebyidComponent } from './components/showemployeebyid/showemp
 import{LoginComponent} from './components/login/login.component';
 import {SelectProjByIDComponent} from './components/select-proj-by-id/select-proj-by-id.component';
 import {UpdateProjectComponent} from './components/update-project/update-project.component';
+import{UpdateemployeeComponent} from './components/updateemployee/updateemployee.component';
 const routes: Routes = [
   {path: '', redirectTo: '/InsertEmployee', pathMatch: 'full'},
   {path:'InsertEmployee',component:InsertemployeeComponent},
@@ -13,7 +14,10 @@ const routes: Routes = [
   {path:'ShowEmployeeByID',component:ShowemployeebyidComponent},
   {path:'Login', component:LoginComponent},
   {path:'SelectProjByID', component:SelectProjByIDComponent},
-  {path:'UpdateProject', component:UpdateProjectComponent}
+  {path:'UpdateProject', component:UpdateProjectComponent},
+  {path:'updateemployee', component:UpdateemployeeComponent}
+
+
 
 
 
