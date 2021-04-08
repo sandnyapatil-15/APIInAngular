@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./update-project.component.css']
 })
 export class UpdateProjectComponent implements OnInit {
-
+pid: any;
+pname: string;
+domain : string;
   constructor() { }
 
   ngOnInit(): void {
+    this.pid=localStorage.getItem('PID');
+    this.pname=localStorage.getItem('PNAME');
+    this.domain= localStorage.getItem('DOMAIN');
+    alert(this.pid + ',' + this.pname + ',' +this.domain);
   }
 
 }

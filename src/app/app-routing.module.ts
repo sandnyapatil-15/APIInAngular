@@ -7,6 +7,7 @@ import{LoginComponent} from './components/login/login.component';
 import {SelectProjByIDComponent} from './components/select-proj-by-id/select-proj-by-id.component';
 import {UpdateProjectComponent} from './components/update-project/update-project.component';
 const routes: Routes = [
+  {path: '', redirectTo: '/InsertEmployee', pathMatch: 'full'},
   {path:'InsertEmployee',component:InsertemployeeComponent},
   {path:'ShowAllEmployees',component:ShowallemployeesComponent},
   {path:'ShowEmployeeByID',component:ShowemployeebyidComponent},
